@@ -8,7 +8,8 @@ port=""
 socklist=""
 DBUSER="XXXX"
 DBPASS="XXXX"
-
+REPUSER="XXXX"
+REPPASS="XXXX"
 
 date > $logfile
 
@@ -50,8 +51,8 @@ function reset_master()
                   change master to \
                   master_host='${MIP}', \
                   master_port=${port}, \
-                  master_user='repl', \
-                  master_password='repl', \
+                  master_user='${REPUSER}', \
+                  master_password='${REPPASS}', \
                   master_auto_position =1;"
       echo "${runcommand}"
       echo "${runcommand}" >>$logfile 
